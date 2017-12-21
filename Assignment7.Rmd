@@ -9,13 +9,16 @@ In the following assignment you will be looking at data from an one level of an 
 
 #Upload data
 ```{r}
+D1 <- read.csv("online.data.csv", sep = ",", header = TRUE)
 
 ```
 
 #Visualization 
 ```{r}
 #Start by creating histograms of the distributions for all variables (#HINT: look up "facet" in the ggplot documentation)
-
+library(tidyr)
+D2 <- gather(D1, "Variable", "Score", 2:7)
+D2$Score <- as.numeric(D2$Score)
 #Then visualize the relationships between variables
 
 #Try to capture an intution about the data and the relationships
